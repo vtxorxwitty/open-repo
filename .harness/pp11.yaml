@@ -1,0 +1,9 @@
+pipeline:
+    name: pp11
+    identifier: pp11
+    projectIdentifier: gitsyncved
+    orgIdentifier: VT
+    tags: {}
+    template:
+        templateRef: p1233
+        versionLabel: v1
