@@ -38,4 +38,9 @@ template:
                             errors:
                                 - AllErrors
                             action:
-                                type: MarkAsSuccess
+                                type: ManualIntervention
+                                spec:
+                                    timeout: 10m
+                                    onTimeout:
+                                        action:
+                                            type: Abort
