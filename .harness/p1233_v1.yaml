@@ -33,3 +33,9 @@ template:
                                     timeout: 10m
                       serviceDependencies: []
                   tags: {}
+                  failureStrategies:
+                      - onFailure:
+                            errors:
+                                - AllErrors
+                            action:
+                                type: MarkAsSuccess
