@@ -9,6 +9,28 @@ template:
     spec:
         stages:
             - stage:
+                  name: s111
+                  identifier: s111
+                  description: ""
+                  type: Approval
+                  spec:
+                      execution:
+                          steps:
+                              - step:
+                                    name: Approval
+                                    identifier: approval
+                                    type: HarnessApproval
+                                    timeout: 1d
+                                    spec:
+                                        approvalMessage: |-
+                                            Please review the following information
+                                            and approve the pipeline progression
+                                        includePipelineExecutionHistory: true
+                                        approvers:
+                                            minimumCount: 1
+                                            disallowPipelineExecutor: false
+                  tags: {}
+            - stage:
                   name: s1
                   identifier: s1
                   description: ""
@@ -26,11 +48,14 @@ template:
                                         source:
                                             type: Inline
                                             spec:
-                                                script: vbjbjdnsmsdbd
+                                                script: echo hi
                                         environmentVariables: []
                                         outputVariables: []
                                         executionTarget: {}
                                     timeout: 10m
+                                    when:
+                                        stageStatus: Failure
+                                    failureStrategies: []
                       serviceDependencies: []
                   tags: {}
                   failureStrategies:
