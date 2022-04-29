@@ -1,0 +1,9 @@
+pipeline:
+    name: p12345
+    identifier: p12345
+    projectIdentifier: gitsyncved
+    orgIdentifier: VT
+    tags: {}
+    template:
+        templateRef: p1233
+        versionLabel: v1
