@@ -1,0 +1,35 @@
+template:
+    name: p1233
+    identifier: p1233
+    versionLabel: v1
+    type: Pipeline
+    projectIdentifier: gitsyncved
+    orgIdentifier: VT
+    tags: {}
+    spec:
+        stages:
+            - stage:
+                  name: s1
+                  identifier: s1
+                  description: ""
+                  type: Approval
+                  spec:
+                      execution:
+                          steps:
+                              - step:
+                                    type: ShellScript
+                                    name: ssh
+                                    identifier: ssh
+                                    spec:
+                                        shell: Bash
+                                        onDelegate: true
+                                        source:
+                                            type: Inline
+                                            spec:
+                                                script: echo hii
+                                        environmentVariables: []
+                                        outputVariables: []
+                                        executionTarget: {}
+                                    timeout: 10m
+                      serviceDependencies: []
+                  tags: {}
