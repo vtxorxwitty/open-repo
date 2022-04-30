@@ -1,0 +1,23 @@
+connector:
+  name: vt-conn
+  identifier: vtconn
+  description:
+  orgIdentifier: VT
+  projectIdentifier: gitsyncved
+  type: Github
+  spec:
+    url: https://github.com/vtxorxwitty
+    validationRepo: open-repo
+    authentication:
+      type: Http
+      spec:
+        type: UsernameToken
+        spec:
+          username: vtxorxwitty
+          tokenRef: vtgitpat
+    apiAccess:
+      type: Token
+      spec:
+        tokenRef: vtgitpat
+    executeOnDelegate: false
+    type: Account
