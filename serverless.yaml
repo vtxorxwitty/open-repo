@@ -1,5 +1,5 @@
 service: my-project-134fadsa
-frameworkVersion: '2.35.0'
+frameworkVersion: '3.21.0'
 
 provider:
   name: aws
