@@ -53,7 +53,7 @@ pipeline:
               action:
                 type: StageRollback
     - stage:
-        name: stage2
+        name: stage1234
         identifier: stage2
         description: ""
         type: Deployment
