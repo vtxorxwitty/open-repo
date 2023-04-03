@@ -441,3 +441,49 @@ pipeline:
                 - AllErrors
               action:
                 type: StageRollback
+    - stage:
+        name: s34
+        identifier: s34
+        description: ""
+        type: Deployment
+        spec:
+          deploymentType: AzureWebApp
+          service:
+            serviceRef: AZURE_SERVICE
+            serviceInputs:
+              serviceDefinition:
+                type: AzureWebApp
+                spec:
+                  artifacts:
+                    primary:
+                      primaryArtifactRef: <+input>
+                      sources: <+input>
+          environment:
+            environmentRef: ENV
+            deployToAll: false
+            infrastructureDefinitions:
+              - identifier: AZURE_WEB_APPS_INFRA
+          execution:
+            steps:
+              - step:
+                  name: Slot Deployment
+                  identifier: slotDeployment
+                  type: AzureSlotDeployment
+                  timeout: 20m
+                  spec:
+                    webApp: ""
+                    deploymentSlot: ""
+            rollbackSteps:
+              - step:
+                  name: WebApp rollback
+                  identifier: webAppRollback
+                  type: AzureWebAppRollback
+                  timeout: 20m
+                  spec: {}
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
