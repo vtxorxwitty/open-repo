@@ -471,8 +471,8 @@ pipeline:
                   type: AzureSlotDeployment
                   timeout: 20m
                   spec:
-                    webApp: "ac"
-                    deploymentSlot: "ax"
+                    webApp: ac
+                    deploymentSlot: ax
             rollbackSteps:
               - step:
                   name: WebApp rollback
@@ -480,6 +480,53 @@ pipeline:
                   type: AzureWebAppRollback
                   timeout: 20m
                   spec: {}
+        tags: {}
+        failureStrategies:
+          - onFailure:
+              errors:
+                - AllErrors
+              action:
+                type: StageRollback
+    - stage:
+        name: ssssss
+        identifier: ssssss
+        description: ""
+        type: Deployment
+        spec:
+          deploymentType: Kubernetes
+          service:
+            serviceRef: NEXUS_V1
+            serviceInputs:
+              serviceDefinition:
+                type: Kubernetes
+                spec:
+                  artifacts:
+                    primary:
+                      primaryArtifactRef: <+input>
+                      sources: <+input>
+          environment:
+            environmentRef: ENV
+            deployToAll: false
+            infrastructureDefinitions:
+              - identifier: name123
+          execution:
+            steps:
+              - step:
+                  name: Rollout Deployment
+                  identifier: rolloutDeployment
+                  type: K8sRollingDeploy
+                  timeout: 10m
+                  spec:
+                    skipDryRun: false
+                    pruningEnabled: false
+            rollbackSteps:
+              - step:
+                  name: Rollback Rollout Deployment
+                  identifier: rollbackRolloutDeployment
+                  type: K8sRollingRollback
+                  timeout: 10m
+                  spec:
+                    pruningEnabled: false
         tags: {}
         failureStrategies:
           - onFailure:
