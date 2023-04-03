@@ -471,8 +471,8 @@ pipeline:
                   type: AzureSlotDeployment
                   timeout: 20m
                   spec:
-                    webApp: ""
-                    deploymentSlot: ""
+                    webApp: "ac"
+                    deploymentSlot: "ax"
             rollbackSteps:
               - step:
                   name: WebApp rollback
