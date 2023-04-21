@@ -10,16 +10,6 @@ template:
     type: Deployment
     spec:
       deploymentType: Kubernetes
-      service:
-        serviceRef: NEXUS_V1
-        serviceInputs:
-          serviceDefinition:
-            type: Kubernetes
-            spec:
-              artifacts:
-                primary:
-                  primaryArtifactRef: <+input>
-                  sources: <+input>
       environment:
         environmentRef: <+input>
         deployToAll: false
@@ -44,6 +34,37 @@ template:
               timeout: 10m
               spec:
                 pruningEnabled: false
+      services:
+        values:
+          - serviceRef: NEXUS_V1
+            serviceInputs:
+              serviceDefinition:
+                type: Kubernetes
+                spec:
+                  artifacts:
+                    primary:
+                      primaryArtifactRef: <+input>
+                      sources: <+input>
+          - serviceRef: GITHUB_PACKAGES_SERVICE
+            serviceInputs:
+              serviceDefinition:
+                type: Kubernetes
+                spec:
+                  artifacts:
+                    primary:
+                      primaryArtifactRef: <+input>
+                      sources: <+input>
+          - serviceRef: ECR_SERVICE
+            serviceInputs:
+              serviceDefinition:
+                type: Kubernetes
+                spec:
+                  artifacts:
+                    primary:
+                      primaryArtifactRef: <+input>
+                      sources: <+input>
+        metadata:
+          parallel: true
     failureStrategies:
       - onFailure:
           errors:
