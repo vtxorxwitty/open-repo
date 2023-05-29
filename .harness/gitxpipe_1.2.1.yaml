@@ -1,0 +1,32 @@
+template:
+  name: gitx-pipe
+  identifier: gitxpipe
+  type: Pipeline
+  orgIdentifier: default
+  tags: {}
+  spec:
+    stages:
+      - stage:
+          name: s1
+          identifier: s1
+          description: ""
+          type: Custom
+          spec:
+            execution:
+              steps:
+                - step:
+                    type: ShellScript
+                    name: ShellScript_1
+                    identifier: ShellScript_1
+                    timeout: 10m
+                    spec:
+                      shell: Bash
+                      onDelegate: true
+                      source:
+                        type: Inline
+                        spec:
+                          script: <+input>
+                      environmentVariables: []
+                      outputVariables: []
+          tags: {}
+  versionLabel: 1.2.1
