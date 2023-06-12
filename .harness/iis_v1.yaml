@@ -30,7 +30,7 @@ template:
                 source:
                   type: Inline
                   spec:
-                    script: ew
+                    script: ewhe
                 environmentVariables: []
                 outputVariables: []
     failureStrategies:
