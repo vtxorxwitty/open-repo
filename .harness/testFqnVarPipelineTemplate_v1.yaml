@@ -1,0 +1,101 @@
+template:
+  name: testFqnVarPipelineTemplate
+  type: Pipeline
+  projectIdentifier: Fardeen
+  orgIdentifier: default
+  spec:
+    stages:
+      - stage:
+          name: stg1
+          identifier: stg1
+          description: ""
+          type: Custom
+          spec:
+            execution:
+              steps:
+                - step:
+                    type: ShellScript
+                    name: ShellScript_1
+                    identifier: ShellScript_1
+                    spec:
+                      shell: Bash
+                      onDelegate: true
+                      source:
+                        type: Inline
+                        spec:
+                          script: <+input>
+                      environmentVariables: []
+                      outputVariables: []
+                    timeout: 10m
+          tags: {}
+          variables:
+            - name: stg1Var1
+              type: String
+              description: ""
+              required: true
+              value: <+input>
+            - name: stg1Var2
+              type: String
+              description: ""
+              required: false
+              value: <+input>
+      - stage:
+          name: stg2
+          identifier: stg2
+          description: ""
+          type: Custom
+          spec:
+            execution:
+              steps:
+                - step:
+                    type: ShellScript
+                    name: ShellScript_1
+                    identifier: ShellScript_1
+                    spec:
+                      shell: Bash
+                      onDelegate: true
+                      source:
+                        type: Inline
+                        spec:
+                          script: <+input>
+                      environmentVariables: []
+                      outputVariables: []
+                    timeout: 10m
+          tags: {}
+          variables:
+            - name: stg2Var1
+              type: String
+              description: ""
+              required: false
+              value: <+input>
+      - stage:
+          name: stg3
+          identifier: stg3
+          description: ""
+          type: Custom
+          spec:
+            execution:
+              steps:
+                - step:
+                    type: ShellScript
+                    name: ShellScript_1
+                    identifier: ShellScript_1
+                    spec:
+                      shell: Bash
+                      onDelegate: true
+                      source:
+                        type: Inline
+                        spec:
+                          script: <+input>
+                      environmentVariables: []
+                      outputVariables: []
+                    timeout: 10m
+          tags: {}
+          variables:
+            - name: stg3Var1
+              type: String
+              description: ""
+              required: true
+              value: <+pipeline.stages.stg1.variables.stg1Var1>
+  identifier: testFqnVarPipelineTemplate
+  versionLabel: v1
