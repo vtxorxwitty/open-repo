@@ -1,6 +1,6 @@
 pipeline:
-  name: ppower-ssh
-  identifier: ppowerssh
+  name: ppower-ssh123
+  identifier: ppowerssh123
   projectIdentifier: V
   orgIdentifier: default
   tags: {}
