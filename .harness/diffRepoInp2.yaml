@@ -20,8 +20,8 @@ inputSet:
                       source:
                         type: Inline
                         spec:
-                          script: echo "diff repo 2"
+                          script: echo "diff branch repo 2"
   cacheResponse:
-    cacheState: VALID_CACHE
-    ttlLeft: 259162328
-    lastUpdatedAt: 1690789866574
+    cacheState: STALE_CACHE
+    ttlLeft: 249233901
+    lastUpdatedAt: 1690797900798
