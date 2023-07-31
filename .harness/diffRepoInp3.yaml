@@ -20,4 +20,3 @@ inputSet:
                         type: Inline
                         spec:
                           script: echo "diff repo inp 3"
-                    timeout: 13m
