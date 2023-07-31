@@ -1,7 +1,7 @@
 pipeline:
   name: gitx
   identifier: gitx
-  projectIdentifier: testproj
+  projectIdentifier: V
   orgIdentifier: default
   tags: {}
   stages:
