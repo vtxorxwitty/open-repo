@@ -1,0 +1,22 @@
+inputSet:
+  name: diffRepoInp2
+  identifier: diffRepoInp2
+  orgIdentifier: default
+  projectIdentifier: Fardeen
+  pipeline:
+    identifier: testRemPip
+    stages:
+      - stage:
+          identifier: stg
+          type: Custom
+          spec:
+            execution:
+              steps:
+                - step:
+                    identifier: ShellScript_1
+                    type: ShellScript
+                    spec:
+                      source:
+                        type: Inline
+                        spec:
+                          script: echo "diff repo 2"
