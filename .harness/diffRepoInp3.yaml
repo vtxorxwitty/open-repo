@@ -1,0 +1,23 @@
+inputSet:
+  name: diffRepoInp3
+  identifier: diffRepoInp3
+  orgIdentifier: default
+  projectIdentifier: Fardeen
+  pipeline:
+    identifier: testRemPip
+    stages:
+      - stage:
+          identifier: stg
+          type: Custom
+          spec:
+            execution:
+              steps:
+                - step:
+                    identifier: ShellScript_1
+                    type: ShellScript
+                    spec:
+                      source:
+                        type: Inline
+                        spec:
+                          script: echo "diff repo inp 3"
+                    timeout: 13m
