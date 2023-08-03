@@ -1,5 +1,6 @@
 inputSet:
   name: diffRepoInp3
+  tags: {}
   identifier: diffRepoInp3
   orgIdentifier: default
   projectIdentifier: Fardeen
@@ -20,3 +21,8 @@ inputSet:
                         type: Inline
                         spec:
                           script: echo "diff repo inp 3"
+                    timeout: 10m
+  cacheResponse:
+    cacheState: VALID_CACHE
+    ttlLeft: 259158695
+    lastUpdatedAt: 1691069147566
