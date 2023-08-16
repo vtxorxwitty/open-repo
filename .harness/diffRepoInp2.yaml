@@ -21,7 +21,6 @@ inputSet:
                         type: Inline
                         spec:
                           script: echo "diff repo 2"
-                    timeout: 17m
   cacheResponse:
     cacheState: VALID_CACHE
     ttlLeft: 258943691
