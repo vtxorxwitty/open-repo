@@ -1,0 +1,35 @@
+inputSet:
+  name: is2
+  tags: {}
+  identifier: is2
+  orgIdentifier: default
+  projectIdentifier: V
+  pipeline:
+    identifier: queued
+    stages:
+      - stage:
+          identifier: s1
+          type: Deployment
+          spec:
+            service:
+              serviceInputs:
+                serviceDefinition:
+                  type: Kubernetes
+                  spec:
+                    artifacts:
+                      primary:
+                        primaryArtifactRef: a1
+                        sources: <+input>
+      - stage:
+          identifier: s2
+          type: Deployment
+          spec:
+            service:
+              serviceInputs:
+                serviceDefinition:
+                  type: Kubernetes
+                  spec:
+                    artifacts:
+                      primary:
+                        primaryArtifactRef: a1
+                        sources: <+input>
