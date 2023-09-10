@@ -1,0 +1,20 @@
+template:
+  name: projecttemplate
+  identifier: projecttemplate
+  versionLabel: v2
+  type: Step
+  projectIdentifier: V
+  orgIdentifier: default
+  tags: {}
+  spec:
+    timeout: 10m
+    type: ShellScript
+    spec:
+      shell: Bash
+      onDelegate: true
+      source:
+        type: Inline
+        spec:
+          script: echo world
+      environmentVariables: []
+      outputVariables: []
