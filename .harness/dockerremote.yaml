@@ -16,4 +16,12 @@ service:
                 digest: ""
               identifier: s1
               type: DockerRegistry
+            - spec:
+                connectorRef: AMI_SOURCE
+                imagePath: <+input>
+                tag: <+input>
+                digest: ""
+                region: us-east-1
+              identifier: s2
+              type: Ecr
     type: Kubernetes
