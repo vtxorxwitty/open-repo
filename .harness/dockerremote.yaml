@@ -1,0 +1,5 @@
+service:
+  name: docker-remote
+  identifier: dockerremote
+  orgIdentifier: default
+  projectIdentifier: V
