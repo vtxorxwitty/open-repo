@@ -3,3 +3,17 @@ service:
   identifier: dockerremote
   orgIdentifier: default
   projectIdentifier: V
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: dockerprivate
+                imagePath: library/nginx
+                tag: stable-perl
+                digest: ""
+              identifier: s1
+              type: DockerRegistry
+    type: Kubernetes
