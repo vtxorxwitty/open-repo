@@ -33,4 +33,12 @@ service:
                 digest: ""
                 org: ""
               type: GithubPackageRegistry
+            - spec:
+                connectorRef: account.ARTIFACTORY_CONNECTOR
+                artifactPath: <+input>
+                tag: <+input>
+                repository: <+input>
+                repositoryFormat: docker
+              identifier: s4
+              type: ArtifactoryRegistry
     type: Kubernetes
