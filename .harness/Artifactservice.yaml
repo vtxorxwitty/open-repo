@@ -1,0 +1,5 @@
+service:
+  name: Artifact-service
+  identifier: Artifactservice
+  orgIdentifier: default
+  projectIdentifier: V
