@@ -17,4 +17,11 @@ service:
                 fileFilter: ""
               identifier: S3
               type: AmazonS3
+            - spec:
+                connectorRef: GCP_CONNECTOR
+                project: <+input>
+                bucket: <+input>
+                artifactPath: <+input>
+              identifier: GCS
+              type: GoogleCloudStorage
     type: Ssh
