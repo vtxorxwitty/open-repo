@@ -24,4 +24,13 @@ service:
                 artifactPath: <+input>
               identifier: GCS
               type: GoogleCloudStorage
+            - spec:
+                connectorRef: ACP_CONNECTOR
+                tag: <+input>
+                digest: ""
+                subscriptionId: <+input>
+                registry: <+input>
+                repository: <+input>
+              identifier: ACR
+              type: Acr
     type: Ssh
