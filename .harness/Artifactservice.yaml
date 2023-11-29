@@ -3,3 +3,18 @@ service:
   identifier: Artifactservice
   orgIdentifier: default
   projectIdentifier: V
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: awstest
+                bucketName: <+input>
+                region: us-east-1
+                filePath: <+input>
+                fileFilter: ""
+              identifier: S3
+              type: AmazonS3
+    type: Ssh
