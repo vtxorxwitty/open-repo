@@ -27,9 +27,9 @@ service:
             - identifier: s3
               spec:
                 connectorRef: account.vedgithub
-                packageName: <+input>
+                packageName: helloworld
                 packageType: container
-                version: <+input>
+                version: "97"
                 digest: ""
                 org: ""
               type: GithubPackageRegistry
