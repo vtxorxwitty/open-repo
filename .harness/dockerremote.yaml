@@ -11,15 +11,15 @@ service:
           sources:
             - spec:
                 connectorRef: dockerprivate
-                imagePath: library/nginx
-                tag: stable-perl
+                imagePath: <+input>
+                tag: <+input>
                 digest: ""
               identifier: s1
               type: DockerRegistry
             - spec:
                 connectorRef: AMI_SOURCE
-                imagePath: hello-world
-                tag: special
+                imagePath: <+input>
+                tag: <+input>
                 digest: ""
                 region: us-east-1
               identifier: s2
@@ -27,17 +27,17 @@ service:
             - identifier: s3
               spec:
                 connectorRef: account.vedgithub
-                packageName: helloworld
+                packageName: <+input>
                 packageType: container
-                version: "97"
+                version: <+input>
                 digest: ""
                 org: ""
               type: GithubPackageRegistry
             - spec:
                 connectorRef: account.ARTIFACTORY_CONNECTOR
-                artifactPath: automationalpine
-                tag: v1
-                repository: docker-local
+                artifactPath: <+input>
+                tag: <+input>
+                repository: <+input>
                 repositoryFormat: docker
               identifier: s4
               type: ArtifactoryRegistry
