@@ -22,6 +22,7 @@ pipeline:
                     primary:
                       primaryArtifactRef: <+input>
                       sources: <+input>
+            gitBranch: hello
           environment:
             environmentRef: ENV
             deployToAll: false
