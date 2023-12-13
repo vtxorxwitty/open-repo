@@ -7,7 +7,7 @@ service:
     spec:
       artifacts:
         primary:
-          primaryArtifactRef: s2
+          primaryArtifactRef: s3
           sources:
             - spec:
                 connectorRef: dockerprivate
