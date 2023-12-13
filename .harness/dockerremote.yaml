@@ -6,39 +6,5 @@ service:
   serviceDefinition:
     spec:
       artifacts:
-        primary:
-          primaryArtifactRef: <+input>
-          sources:
-            - spec:
-                connectorRef: dockerprivate
-                imagePath: library/nginx
-                tag: stable-perl
-                digest: ""
-              identifier: s1
-              type: DockerRegistry
-            - spec:
-                connectorRef: AMI_SOURCE
-                imagePath: hello-world
-                tag: special
-                digest: ""
-                region: us-east-1
-              identifier: s2
-              type: Ecr
-            - identifier: s3
-              spec:
-                connectorRef: account.vedgithub
-                packageName: helloworld
-                packageType: container
-                version: "97"
-                digest: ""
-                org: ""
-              type: GithubPackageRegistry
-            - spec:
-                connectorRef: account.ARTIFACTORY_CONNECTOR
-                artifactPath: automationalpine
-                tag: v1
-                repository: docker-local
-                repositoryFormat: docker
-              identifier: s4
-              type: ArtifactoryRegistry
+        primary: {}
     type: Kubernetes
