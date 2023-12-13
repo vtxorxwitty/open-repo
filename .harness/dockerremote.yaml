@@ -18,8 +18,8 @@ service:
               type: DockerRegistry
             - spec:
                 connectorRef: AMI_SOURCE
-                imagePath: <+input>
-                tag: <+input>
+                imagePath: hello-world
+                tag: special
                 digest: ""
                 region: us-east-1
               identifier: s2
