@@ -35,9 +35,9 @@ service:
               type: GithubPackageRegistry
             - spec:
                 connectorRef: account.ARTIFACTORY_CONNECTOR
-                artifactPath: <+input>
-                tag: <+input>
-                repository: <+input>
+                artifactPath: automationalpine
+                tag: v1
+                repository: docker-local
                 repositoryFormat: docker
               identifier: s4
               type: ArtifactoryRegistry
