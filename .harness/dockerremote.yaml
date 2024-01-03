@@ -12,7 +12,7 @@ service:
             - spec:
                 connectorRef: dockerprivate
                 imagePath: library/nginx
-                tag: stable
+                tag: <+input>
                 digest: <+input>
               identifier: s1
               type: DockerRegistry
