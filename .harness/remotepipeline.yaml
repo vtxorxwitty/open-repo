@@ -12,11 +12,6 @@ pipeline:
         type: Deployment
         spec:
           deploymentType: Kubernetes
-          environment:
-            environmentRef: ENV
-            deployToAll: false
-            infrastructureDefinitions:
-              - identifier: infr2
           execution:
             steps:
               - step:
@@ -69,6 +64,17 @@ pipeline:
                                 digest: <+input>
             metadata:
               parallel: true
+          environments:
+            metadata:
+              parallel: true
+            values:
+              - environmentRef: env2
+                gitBranch: gitx-commit
+                deployToAll: true
+                infrastructureDefinitions: <+input>
+              - environmentRef: envremote
+                deployToAll: true
+                infrastructureDefinitions: <+input>
         tags: {}
         failureStrategies:
           - onFailure:
