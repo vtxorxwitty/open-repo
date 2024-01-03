@@ -64,7 +64,7 @@ pipeline:
                             - identifier: s1
                               type: DockerRegistry
                               spec:
-                                imagePath: <+input>
+                                imagePath: ""
                                 tag: <+input>
                                 digest: <+input>
             metadata:
