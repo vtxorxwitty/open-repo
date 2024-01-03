@@ -52,7 +52,7 @@ pipeline:
                                 tag: <+input>
                                 digest: <+input>
                 gitBranch: hello
-              - serviceRef: DOCKER
+              - serviceRef: docker2
                 serviceInputs:
                   serviceDefinition:
                     type: Kubernetes
@@ -61,8 +61,9 @@ pipeline:
                         primary:
                           primaryArtifactRef: <+input>
                           sources: <+input>
+                gitBranch: gitx-commit
             metadata:
-              parallel: false
+              parallel: true
         tags: {}
         failureStrategies:
           - onFailure:
