@@ -6,14 +6,5 @@ service:
   serviceDefinition:
     spec:
       artifacts:
-        primary:
-          primaryArtifactRef: <+input>
-          sources:
-            - spec:
-                connectorRef: dockerprivate
-                imagePath: library/nginx
-                tag: <+input>
-                digest: <+input>
-              identifier: s1
-              type: DockerRegistry
+        primary: {}
     type: Kubernetes
