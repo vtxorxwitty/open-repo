@@ -49,6 +49,7 @@ pipeline:
                             - identifier: s1
                               type: DockerRegistry
                               spec:
+                                tag: <+input>
                                 digest: <+input>
                 gitBranch: hello
               - serviceRef: DOCKER
