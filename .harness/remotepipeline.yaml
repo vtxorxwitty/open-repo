@@ -47,6 +47,15 @@ pipeline:
                           primaryArtifactRef: <+input>
                           sources: <+input>
                 gitBranch: main
+              - serviceRef: DOCKER
+                serviceInputs:
+                  serviceDefinition:
+                    type: Kubernetes
+                    spec:
+                      artifacts:
+                        primary:
+                          primaryArtifactRef: <+input>
+                          sources: <+input>
             metadata:
               parallel: false
         tags: {}
