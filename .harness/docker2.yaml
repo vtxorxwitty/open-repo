@@ -3,3 +3,42 @@ service:
   identifier: docker2
   orgIdentifier: default
   projectIdentifier: V
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: dockerprivate
+                imagePath: library/nginx
+                tag: <+input>
+                digest: <+input>
+              identifier: s1
+              type: DockerRegistry
+            - spec:
+                connectorRef: AMI_SOURCE
+                imagePath: <+input>
+                tag: <+input>
+                digest: ""
+                region: us-east-1
+              identifier: s2
+              type: Ecr
+            - identifier: s3
+              spec:
+                connectorRef: account.vedgithub
+                packageName: <+input>
+                packageType: container
+                version: <+input>
+                digest: ""
+                org: ""
+              type: GithubPackageRegistry
+            - spec:
+                connectorRef: account.ARTIFACTORY_CONNECTOR
+                artifactPath: <+input>
+                tag: <+input>
+                repository: <+input>
+                repositoryFormat: docker
+              identifier: s4
+              type: ArtifactoryRegistry
+    type: Kubernetes
