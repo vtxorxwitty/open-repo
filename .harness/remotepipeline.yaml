@@ -35,22 +35,35 @@ pipeline:
                   timeout: 10m
                   spec:
                     pruningEnabled: false
-          service:
-            serviceRef: docker2
-            serviceInputs:
-              serviceDefinition:
-                type: Kubernetes
-                spec:
-                  artifacts:
-                    primary:
-                      primaryArtifactRef: s1
-                      sources:
-                        - identifier: s1
-                          type: DockerRegistry
-                          spec:
-                            tag: <+input>
-                            digest: <+input>
-            gitBranch: gitx-commit
+          services:
+            values:
+              - serviceRef: docker2
+                serviceInputs:
+                  serviceDefinition:
+                    type: Kubernetes
+                    spec:
+                      artifacts:
+                        primary:
+                          primaryArtifactRef: s1
+                          sources:
+                            - identifier: s1
+                              type: DockerRegistry
+                              spec:
+                                tag: <+input>
+                                digest: <+input>
+                gitBranch: gitx-commit
+              - serviceRef: dockerremote
+                serviceInputs:
+                  serviceDefinition:
+                    type: Kubernetes
+                    spec:
+                      artifacts:
+                        primary:
+                          primaryArtifactRef: <+input>
+                          sources: <+input>
+                gitBranch: hello
+            metadata:
+              parallel: true
         tags: {}
         failureStrategies:
           - onFailure:
