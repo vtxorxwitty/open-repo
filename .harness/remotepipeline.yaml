@@ -44,8 +44,13 @@ pipeline:
                     spec:
                       artifacts:
                         primary:
-                          primaryArtifactRef: <+input>
-                          sources: <+input>
+                          primaryArtifactRef: s1
+                          sources:
+                            - identifier: s1
+                              type: DockerRegistry
+                              spec:
+                                tag: <+input>
+                                digest: <+input>
                 gitBranch: main
               - serviceRef: DOCKER
                 serviceInputs:
