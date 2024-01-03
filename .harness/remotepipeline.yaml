@@ -12,16 +12,6 @@ pipeline:
         type: Deployment
         spec:
           deploymentType: Kubernetes
-          service:
-            serviceRef: dockerremote
-            serviceInputs:
-              serviceDefinition:
-                type: Kubernetes
-                spec:
-                  artifacts:
-                    primary:
-                      primaryArtifactRef: <+input>
-                      sources: <+input>
           environment:
             environmentRef: ENV
             deployToAll: false
@@ -45,6 +35,20 @@ pipeline:
                   timeout: 10m
                   spec:
                     pruningEnabled: false
+          services:
+            values:
+              - serviceRef: dockerremote
+                serviceInputs:
+                  serviceDefinition:
+                    type: Kubernetes
+                    spec:
+                      artifacts:
+                        primary:
+                          primaryArtifactRef: <+input>
+                          sources: <+input>
+                gitBranch: main
+            metadata:
+              parallel: false
         tags: {}
         failureStrategies:
           - onFailure:
