@@ -1,0 +1,7 @@
+environment:
+  name: env-remote
+  identifier: envremote
+  accountId: kmpySmUISimoRrJL6NL73w
+  orgIdentifier: default
+  projectIdentifier: V
+  type: Production
