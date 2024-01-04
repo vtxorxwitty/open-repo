@@ -53,8 +53,14 @@ pipeline:
                     spec:
                       artifacts:
                         primary:
-                          primaryArtifactRef: <+input>
-                          sources: <+input>
+                          primaryArtifactRef: s1
+                          sources:
+                            - identifier: s1
+                              type: DockerRegistry
+                              spec:
+                                imagePath: <+input>
+                                tag: <+input>
+                                digest: <+input>
                 gitBranch: hello
             metadata:
               parallel: true
