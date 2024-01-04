@@ -29,28 +29,48 @@ pipeline:
                     outputVariables: []
                   timeout: 10m
             rollbackSteps: []
-          service:
-            serviceRef: docker2
-            serviceInputs:
-              serviceDefinition:
-                type: Kubernetes
-                spec:
-                  artifacts:
-                    primary:
-                      primaryArtifactRef: s1
-                      sources:
-                        - identifier: s1
-                          type: DockerRegistry
-                          spec:
-                            tag: <+input>
-                            digest: <+input>
-            gitBranch: gitx-commit
-          environment:
-            environmentRef: env2
-            gitBranch: gitx-commit
-            deployToAll: false
-            infrastructureDefinitions:
-              - identifier: infra123
+          services:
+            values:
+              - serviceRef: docker2
+                serviceInputs:
+                  serviceDefinition:
+                    type: Kubernetes
+                    spec:
+                      artifacts:
+                        primary:
+                          primaryArtifactRef: s1
+                          sources:
+                            - identifier: s1
+                              type: DockerRegistry
+                              spec:
+                                tag: <+input>
+                                digest: <+input>
+                gitBranch: gitx-commit
+              - serviceRef: dockerremote
+                serviceInputs:
+                  serviceDefinition:
+                    type: Kubernetes
+                    spec:
+                      artifacts:
+                        primary:
+                          primaryArtifactRef: <+input>
+                          sources: <+input>
+                gitBranch: hello
+            metadata:
+              parallel: true
+          environments:
+            metadata:
+              parallel: true
+            values:
+              - environmentRef: env2
+                gitBranch: gitx-commit
+                deployToAll: false
+                infrastructureDefinitions:
+                  - identifier: infra123
+              - environmentRef: envremote
+                gitBranch: hello
+                deployToAll: true
+                infrastructureDefinitions: <+input>
         tags: {}
         failureStrategies:
           - onFailure:
