@@ -11,7 +11,7 @@ service:
           sources:
             - spec:
                 connectorRef: dockerprivate
-                imagePath: <+input>
+                imagePath: library/nginx
                 tag: <+input>
                 digest: <+input>
               identifier: s1
