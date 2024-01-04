@@ -38,8 +38,13 @@ pipeline:
                     spec:
                       artifacts:
                         primary:
-                          primaryArtifactRef: <+input>
-                          sources: <+input>
+                          primaryArtifactRef: s1
+                          sources:
+                            - identifier: s1
+                              type: DockerRegistry
+                              spec:
+                                tag: <+input>
+                                digest: <+input>
                 gitBranch: gitx-commit
               - serviceRef: dockerremote
                 serviceInputs:
@@ -48,8 +53,14 @@ pipeline:
                     spec:
                       artifacts:
                         primary:
-                          primaryArtifactRef: <+input>
-                          sources: <+input>
+                          primaryArtifactRef: s1
+                          sources:
+                            - identifier: s1
+                              type: DockerRegistry
+                              spec:
+                                imagePath: library/nginx
+                                tag: <+input>
+                                digest: <+input>
                 gitBranch: hello
             metadata:
               parallel: true
