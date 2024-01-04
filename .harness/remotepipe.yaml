@@ -46,22 +46,6 @@ pipeline:
                                 tag: <+input>
                                 digest: <+input>
                 gitBranch: gitx-commit
-              - serviceRef: dockerremote
-                serviceInputs:
-                  serviceDefinition:
-                    type: Kubernetes
-                    spec:
-                      artifacts:
-                        primary:
-                          primaryArtifactRef: s1
-                          sources:
-                            - identifier: s1
-                              type: DockerRegistry
-                              spec:
-                                imagePath: <+input>
-                                tag: <+input>
-                                digest: <+input>
-                gitBranch: hello
             metadata:
               parallel: true
           environments:
