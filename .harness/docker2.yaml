@@ -11,7 +11,7 @@ service:
           sources:
             - spec:
                 connectorRef: dockerprivate
-                imagePath: <+serviceVariables.img>
+                imagePath: <+pipeline.variables.p123>
                 tag: <+input>
                 digest: <+input>
               identifier: s1
