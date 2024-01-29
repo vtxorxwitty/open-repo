@@ -11,7 +11,7 @@ service:
           sources:
             - spec:
                 connectorRef: dockerprivate
-                imagePath: library/nginx
+                imagePath: <+serviceVariables.img>
                 tag: <+input>
                 digest: <+input>
               identifier: s1
@@ -41,4 +41,10 @@ service:
                 repositoryFormat: docker
               identifier: s4
               type: ArtifactoryRegistry
+      variables:
+        - name: img
+          type: String
+          description: ""
+          required: false
+          value: library/nginx
     type: Kubernetes
