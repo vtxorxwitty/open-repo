@@ -85,3 +85,9 @@ pipeline:
                 - AllErrors
               action:
                 type: StageRollback
+  variables:
+    - name: p123
+      type: String
+      description: ""
+      required: false
+      value: library/nginx
