@@ -3,7 +3,7 @@ template:
   identifier: projecttemplate
   versionLabel: v2
   type: Step
-  projectIdentifier: V
+  projectIdentifier: DoNotDelete_Amit
   orgIdentifier: default
   tags: {}
   spec:
