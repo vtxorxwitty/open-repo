@@ -3,3 +3,17 @@ service:
   identifier: docrem
   orgIdentifier: default
   projectIdentifier: V
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: dockerprivate
+                imagePath: <+input>
+                tag: <+input>
+                digest: ""
+              identifier: a1
+              type: DockerRegistry
+    type: Kubernetes
