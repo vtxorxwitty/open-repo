@@ -1,0 +1,5 @@
+service:
+  name: doc-rem
+  identifier: docrem
+  orgIdentifier: default
+  projectIdentifier: V
