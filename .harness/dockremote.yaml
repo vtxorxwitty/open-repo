@@ -1,0 +1,5 @@
+service:
+  name: dock-remote
+  identifier: dockremote
+  orgIdentifier: default
+  projectIdentifier: V
