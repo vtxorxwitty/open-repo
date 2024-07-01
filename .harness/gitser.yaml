@@ -1,0 +1,5 @@
+service:
+  name: git-ser
+  identifier: gitser
+  orgIdentifier: default
+  projectIdentifier: V
