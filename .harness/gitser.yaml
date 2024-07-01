@@ -7,5 +7,15 @@ service:
   serviceDefinition:
     spec:
       artifacts:
-        primary: {}
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: awstest
+                imagePath: hello-world
+                tag: 2024.02.03-12.05.36-6a5d7f0
+                digest: ""
+                region: us-east-1
+              identifier: a1
+              type: Ecr
     type: Kubernetes
