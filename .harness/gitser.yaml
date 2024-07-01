@@ -3,4 +3,4 @@ service:
   identifier: gitser
   orgIdentifier: default
   projectIdentifier: V
-  description: 123abcdef
+  description: 123abc
