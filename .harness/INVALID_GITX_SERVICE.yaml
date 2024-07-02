@@ -12,8 +12,7 @@ service:
             - spec:
                 connectorRef: awstest
                 imagePath: hello-world
-                abbdcj: ajbcd
-                tag: <@%%#HBDHC>
+                tag: 2024.02.02-12.05.36-6a5d7f0
                 digest: ""
                 region: us-east-1
               identifier: a1
