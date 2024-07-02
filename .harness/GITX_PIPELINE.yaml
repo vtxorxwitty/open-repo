@@ -20,12 +20,11 @@ pipeline:
                 spec:
                   artifacts:
                     primary:
-                      primaryArtifactRef: <+input>
-                      sources: <+input>
+                      primaryArtifactRef: a1
                   variables:
                     - name: abc
                       type: Secret
-                      value: <+pipeline.variables.var123>
+                      value: <#&@*IDCBCH>
           environment:
             environmentRef: ENV
             deployToAll: false
