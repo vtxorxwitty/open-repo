@@ -3,3 +3,18 @@ service:
   identifier: INVALID_GITX_SERVICE
   orgIdentifier: default
   projectIdentifier: V
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: awstest
+                imagePath: hello-world
+                tag: <@%%#HBDHC>
+                digest: ""
+                region: us-east-1
+              identifier: a1
+              type: Ecr
+    type: Kubernetes
