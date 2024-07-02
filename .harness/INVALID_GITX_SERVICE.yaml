@@ -18,4 +18,10 @@ service:
                 region: us-east-1
               identifier: a1
               type: Ecr
+      variables:
+        - name: abc
+          type: Secret
+          description: ""
+          required: false
+          value: <+abc.var>
     type: Kubernetes
