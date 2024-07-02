@@ -1,0 +1,5 @@
+service:
+  name: INVALID GITX SERVICE
+  identifier: INVALID_GITX_SERVICE
+  orgIdentifier: default
+  projectIdentifier: V
