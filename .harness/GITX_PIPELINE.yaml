@@ -13,8 +13,15 @@ pipeline:
         spec:
           deploymentType: Kubernetes
           service:
-            serviceRef: <+input>
-            serviceInputs: <+input>
+            serviceRef: INVALID_GITX_SERVICE
+            serviceInputs:
+              serviceDefinition:
+                type: Kubernetes
+                spec:
+                  artifacts:
+                    primary:
+                      primaryArtifactRef: <+input>
+                      sources: <+input>
           environment:
             environmentRef: ENV
             deployToAll: false
