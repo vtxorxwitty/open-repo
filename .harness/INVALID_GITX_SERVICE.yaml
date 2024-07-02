@@ -3,6 +3,7 @@ service:
   identifier: INVALID_GITX_SERVICE
   orgIdentifier: default
   projectIdentifier: V
+dncsdkcsodv
   serviceDefinition:
     spec:
       artifacts:
@@ -24,3 +25,4 @@ service:
           required: false
           value: <+abc.var>
     type: Kubernetes
+GEFHCDANCM%#^R&(*)#(R)_
