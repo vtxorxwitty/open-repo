@@ -22,6 +22,10 @@ pipeline:
                     primary:
                       primaryArtifactRef: <+input>
                       sources: <+input>
+                  variables:
+                    - name: abc
+                      type: Secret
+                      value: <+pipeline.variables.var123>
           environment:
             environmentRef: ENV
             deployToAll: false
@@ -51,3 +55,9 @@ pipeline:
                 - AllErrors
               action:
                 type: StageRollback
+  variables:
+    - name: var123
+      type: String
+      description: ""
+      required: false
+      value: "123"
