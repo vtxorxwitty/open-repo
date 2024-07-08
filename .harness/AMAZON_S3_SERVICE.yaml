@@ -12,7 +12,7 @@ service:
                 connectorRef: awstest
                 bucketName: ved-s3-testing
                 region: us-east-1
-                filePathRegex: "*"
+                filePath: <+input>
               identifier: AMAZON_S3_SOURCE
               type: AmazonS3
       variables:
