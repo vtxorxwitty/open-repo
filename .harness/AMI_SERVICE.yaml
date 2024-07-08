@@ -12,6 +12,9 @@ service:
               spec:
                 connectorRef: awstest
                 region: us-east-1
+                tags:
+                  - name: abc
+                    value: xyz
                 version: <+input>
               type: AmazonMachineImage
       variables:
