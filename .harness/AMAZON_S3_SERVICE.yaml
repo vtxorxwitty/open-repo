@@ -1,0 +1,25 @@
+service:
+  name: AMAZON S3 SERVICE
+  identifier: AMAZON_S3_SERVICE
+  serviceDefinition:
+    type: Ssh
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: awstest
+                bucketName: ved-s3-testing
+                region: us-east-1
+                filePathRegex: "*"
+              identifier: AMAZON_S3_SOURCE
+              type: AmazonS3
+      variables:
+        - name: class
+          type: String
+          description: ""
+          value: hi
+  gitOpsEnabled: false
+  orgIdentifier: default
+  projectIdentifier: V
