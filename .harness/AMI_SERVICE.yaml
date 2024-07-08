@@ -1,0 +1,31 @@
+service:
+  name: AMI SERVICE
+  identifier: AMI_SERVICE
+  tags: {}
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - identifier: AMISOURCE
+              spec:
+                connectorRef: <+pipeline.variables.awsconnector>
+                region: us-east-1
+                tags:
+                  - name: abc
+                    value: <+pipeline.variables.tagvalue>
+                filters:
+                  - name: ami-image-id
+                    value: <+pipeline.variables.amiid>
+                version: <+input>
+              type: AmazonMachineImage
+      variables:
+        - name: aws
+          type: String
+          description: ""
+          required: false
+          value: awstest
+    type: Elastigroup
+  orgIdentifier: default
+  projectIdentifier: V
