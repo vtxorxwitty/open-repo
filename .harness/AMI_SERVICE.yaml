@@ -6,7 +6,7 @@ service:
     spec:
       artifacts:
         primary:
-          primaryArtifactRef: <+input>
+          primaryArtifactRef: AMISOURCE
           sources:
             - identifier: AMISOURCE
               spec:
