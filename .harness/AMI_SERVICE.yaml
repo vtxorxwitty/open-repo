@@ -10,7 +10,7 @@ service:
           sources:
             - identifier: AMISOURCE
               spec:
-                connectorRef: <+pipeline.variables.awsconnector>
+                connectorRef: awstest
                 region: us-east-1
                 tags:
                   - name: abc
