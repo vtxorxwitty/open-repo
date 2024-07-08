@@ -12,12 +12,6 @@ service:
               spec:
                 connectorRef: awstest
                 region: us-east-1
-                tags:
-                  - name: abc
-                    value: <+pipeline.variables.tagvalue>
-                filters:
-                  - name: ami-image-id
-                    value: <+pipeline.variables.amiid>
                 version: <+input>
               type: AmazonMachineImage
       variables:
