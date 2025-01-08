@@ -23,4 +23,4 @@ inputSet:
                           - identifier: GITHUB_PACKAGES_SOURCE
                             type: GithubPackageRegistry
                             spec:
-                              version: "100"
+                              version: <+trigger.artifact.build>
