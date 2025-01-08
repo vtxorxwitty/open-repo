@@ -1,5 +1,6 @@
 inputSet:
   name: i1
+  tags: {}
   identifier: i1
   orgIdentifier: default
   projectIdentifier: VT_Tests
@@ -17,6 +18,7 @@ inputSet:
                   spec:
                     artifacts:
                       primary:
+                        primaryArtifactRef: GITHUB_PACKAGES_SOURCE
                         sources:
                           - identifier: GITHUB_PACKAGES_SOURCE
                             type: GithubPackageRegistry
