@@ -20,8 +20,12 @@ pipeline:
                 spec:
                   artifacts:
                     primary:
-                      primaryArtifactRef: <+input>
-                      sources: <+input>
+                      primaryArtifactRef: GITHUB_PACKAGES_SOURCE
+                      sources:
+                        - identifier: GITHUB_PACKAGES_SOURCE
+                          type: GithubPackageRegistry
+                          spec:
+                            version: <+input>
             gitBranch: master
           environment:
             environmentRef: Env
