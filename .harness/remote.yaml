@@ -25,6 +25,7 @@ pipeline:
             gitBranch: master
           environment:
             environmentRef: Env
+            gitBranch: master
             deployToAll: false
             infrastructureDefinitions:
               - identifier: Infra
