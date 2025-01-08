@@ -1,0 +1,24 @@
+inputSet:
+  name: i1
+  identifier: i1
+  orgIdentifier: default
+  projectIdentifier: VT_Tests
+  pipeline:
+    identifier: remote
+    stages:
+      - stage:
+          identifier: s1
+          type: Deployment
+          spec:
+            service:
+              serviceInputs:
+                serviceDefinition:
+                  type: Kubernetes
+                  spec:
+                    artifacts:
+                      primary:
+                        sources:
+                          - identifier: GITHUB_PACKAGES_SOURCE
+                            type: GithubPackageRegistry
+                            spec:
+                              version: "100"
