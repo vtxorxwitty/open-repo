@@ -13,15 +13,15 @@ pipeline:
         spec:
           deploymentType: Kubernetes
           service:
-            serviceRef: GITHUB_PACKAGES
+            serviceRef: DOCKER
             serviceInputs:
               serviceDefinition:
                 type: Kubernetes
                 spec:
                   artifacts:
                     primary:
-                      primaryArtifactRef: <+input>
-                      sources: <+input>
+                      primaryArtifactRef: a1
+            gitBranch: abc
           environment:
             environmentRef: Env
             deployToAll: false
