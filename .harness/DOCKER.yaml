@@ -1,0 +1,20 @@
+service:
+  name: DOCKER
+  identifier: DOCKER
+  serviceDefinition:
+    type: Kubernetes
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: account.KD_Dockerhub
+                imagePath: library/nginx
+                tag: stable-perl
+                digest: ""
+              identifier: a1
+              type: DockerRegistry
+  gitOpsEnabled: false
+  orgIdentifier: default
+  projectIdentifier: VT_Tests
