@@ -13,7 +13,7 @@ pipeline:
         spec:
           deploymentType: Kubernetes
           service:
-            serviceRef: GITHUB_PACKAGES
+            serviceRef: Artifactory
             serviceInputs:
               serviceDefinition:
                 type: Kubernetes
@@ -22,7 +22,6 @@ pipeline:
                     primary:
                       primaryArtifactRef: <+input>
                       sources: <+input>
-            gitBranch: master
           environment:
             environmentRef: Env
             gitBranch: master
