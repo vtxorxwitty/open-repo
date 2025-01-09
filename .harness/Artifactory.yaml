@@ -1,0 +1,22 @@
+service:
+  name: Artifactory
+  identifier: Artifactory
+  tags: {}
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: account.avi_artifactory
+                artifactPath: boo
+                tag: locust
+                repository: docker-local
+                repositoryUrl: ""
+                repositoryFormat: docker
+              identifier: ahbcjdk
+              type: ArtifactoryRegistry
+    type: Kubernetes
+  orgIdentifier: default
+  projectIdentifier: VT_Tests
