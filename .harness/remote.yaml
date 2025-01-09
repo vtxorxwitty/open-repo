@@ -13,7 +13,7 @@ pipeline:
         spec:
           deploymentType: Kubernetes
           service:
-            serviceRef: Artifactory
+            serviceRef: Artifactory_Clone
             serviceInputs:
               serviceDefinition:
                 type: Kubernetes
