@@ -1,0 +1,24 @@
+---
+service:
+  tags: {}
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: "<+input>"
+          sources:
+          - spec:
+              connectorRef: "account.avi_artifactory"
+              artifactPath: "boo"
+              tag: "locust"
+              repository: "docker-local"
+              repositoryUrl: ""
+              repositoryFormat: "docker"
+            identifier: "ahbcjdk"
+            type: "ArtifactoryRegistry"
+    type: "Kubernetes"
+  orgIdentifier: "default"
+  projectIdentifier: "VT_Tests"
+  identifier: "Artifactory_Clone"
+  description: ""
+  name: "Artifactory - Clone"
