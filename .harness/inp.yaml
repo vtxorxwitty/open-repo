@@ -1,5 +1,6 @@
 inputSet:
   name: inp
+  tags: {}
   identifier: inp
   orgIdentifier: default
   projectIdentifier: V
@@ -25,4 +26,4 @@ inputSet:
                               - identifier: a1
                                 type: Ecr
                                 spec:
-                                  tag: artifact1007
+                                  tag: <+trigger.artifact.build>
