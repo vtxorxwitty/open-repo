@@ -1,0 +1,28 @@
+inputSet:
+  name: inputsetrem
+  identifier: inputsetrem
+  orgIdentifier: default
+  projectIdentifier: V
+  pipeline:
+    identifier: piperemote
+    template:
+      templateInputs:
+        stages:
+          - stage:
+              identifier: s1
+              type: Deployment
+              spec:
+                service:
+                  serviceRef: ecr
+                  serviceInputs:
+                    serviceDefinition:
+                      type: Kubernetes
+                      spec:
+                        artifacts:
+                          primary:
+                            primaryArtifactRef: a1
+                            sources:
+                              - identifier: a1
+                                type: Ecr
+                                spec:
+                                  tag: artifact1007
