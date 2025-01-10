@@ -1,0 +1,5 @@
+service:
+  name: ecr
+  identifier: ecr
+  orgIdentifier: default
+  projectIdentifier: V
