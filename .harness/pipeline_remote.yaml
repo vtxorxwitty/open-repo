@@ -4,7 +4,6 @@ pipeline:
   tags: {}
   template:
     templateRef: account.acc_temp_remote
-    versionLabel: v1
     gitBranch: master
     templateInputs:
       stages:
