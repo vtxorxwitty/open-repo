@@ -30,19 +30,11 @@ pipeline:
           execution:
             steps:
               - step:
-                  type: ShellScript
-                  name: ShellScript_1
-                  identifier: ShellScript_1
-                  spec:
-                    shell: Bash
-                    executionTarget: {}
-                    source:
-                      type: Inline
-                      spec:
-                        script: echo hii
-                    environmentVariables: []
-                    outputVariables: []
-                  timeout: 10m
+                  name: s123
+                  identifier: s123
+                  template:
+                    templateRef: account.steptemp
+                    versionLabel: v1
             rollbackSteps: []
         tags: {}
         failureStrategies:
