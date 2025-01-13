@@ -1,0 +1,28 @@
+pipeline:
+  name: remote123
+  identifier: remote123
+  projectIdentifier: V
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: s1
+        identifier: s1
+        description: ""
+        type: Custom
+        spec:
+          environment:
+            environmentRef: ENV
+            deployToAll: false
+            infrastructureDefinitions:
+              - identifier: infr2
+          execution:
+            steps:
+              - step:
+                  name: t1
+                  identifier: t1
+                  template:
+                    templateRef: account.steptemp
+                    versionLabel: v1
+                    gitBranch: master
+        tags: {}
