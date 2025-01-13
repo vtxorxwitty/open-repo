@@ -19,9 +19,10 @@ pipeline:
           execution:
             steps:
               - step:
-                  name: t1
-                  identifier: t1
+                  name: t
+                  identifier: t
                   template:
-                    templateRef: account.steptemp
+                    templateRef: account.stept123
                     versionLabel: v1
+                    gitBranch: main
         tags: {}
