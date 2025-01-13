@@ -25,4 +25,11 @@ pipeline:
                     templateRef: account.stept123
                     versionLabel: v1
                     gitBranch: main
+              - step:
+                  name: t2
+                  identifier: t2
+                  template:
+                    templateRef: account.steptemp
+                    versionLabel: v1
+                    gitBranch: master
         tags: {}
