@@ -25,6 +25,13 @@ pipeline:
                     templateRef: account.stept123
                     versionLabel: v1
                     gitBranch: main
+                    templateInputs:
+                      type: ShellScript
+                      spec:
+                        source:
+                          type: Inline
+                          spec:
+                            script: <+input>
               - step:
                   name: t2
                   identifier: t2
@@ -32,4 +39,11 @@ pipeline:
                     templateRef: account.steptemp
                     versionLabel: v1
                     gitBranch: master
+                    templateInputs:
+                      type: ShellScript
+                      spec:
+                        source:
+                          type: Inline
+                          spec:
+                            script: <+input>
         tags: {}
