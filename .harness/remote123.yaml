@@ -24,5 +24,4 @@ pipeline:
                   template:
                     templateRef: account.steptemp
                     versionLabel: v1
-                    gitBranch: master
         tags: {}
