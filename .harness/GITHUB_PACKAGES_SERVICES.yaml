@@ -1,0 +1,27 @@
+service:
+  name: GITHUB_PACKAGES_SERVICES
+  identifier: GITHUB_PACKAGES_SERVICES
+  tags: {}
+  serviceDefinition:
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - identifier: a1
+              spec:
+                connectorRef: GITHUBCONNECTOR
+                packageName: helloworld
+                packageType: container
+                version: "93"
+                org: ""
+              type: GithubPackageRegistry
+      variables:
+        - name: serv
+          type: String
+          description: ""
+          required: false
+          value: helloworld
+    type: Kubernetes
+  orgIdentifier: default
+  projectIdentifier: V
