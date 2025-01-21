@@ -1,0 +1,26 @@
+service:
+  name: helm
+  identifier: helm
+  orgIdentifier: default
+  projectIdentifier: VT_Tests
+  serviceDefinition:
+    spec:
+      release:
+        name: release-<+INFRA_KEY_SHORT_ID>
+      manifests:
+        - manifest:
+            identifier: i1
+            type: HelmChart
+            spec:
+              store:
+                type: Http
+                spec:
+                  connectorRef: h1
+              chartName: chartmuseum
+              chartVersion: <+input>
+              subChartPath: ""
+              helmVersion: V3
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+              fetchHelmChartMetadata: false
+    type: Kubernetes
