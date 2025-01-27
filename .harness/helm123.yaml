@@ -3,3 +3,22 @@ service:
   identifier: helm123
   orgIdentifier: default
   projectIdentifier: V
+  serviceDefinition:
+    spec:
+      manifests:
+        - manifest:
+            identifier: manif
+            type: HelmChart
+            spec:
+              store:
+                type: Http
+                spec:
+                  connectorRef: Httphelm
+              chartName: chartmuseum
+              chartVersion: <+input>
+              subChartPath: ""
+              helmVersion: V3
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+              fetchHelmChartMetadata: false
+    type: Kubernetes
