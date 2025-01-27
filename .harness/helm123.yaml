@@ -21,4 +21,17 @@ service:
               skipResourceVersioning: false
               enableDeclarativeRollback: false
               fetchHelmChartMetadata: false
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - identifier: a1
+              spec:
+                connectorRef: account.vedgithub
+                packageName: helloworld
+                packageType: container
+                version: <+input>
+                digest: ""
+                org: ""
+              type: GithubPackageRegistry
     type: Kubernetes
