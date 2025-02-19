@@ -21,6 +21,21 @@ service:
               skipResourceVersioning: false
               enableDeclarativeRollback: false
               fetchHelmChartMetadata: false
+        - manifest:
+            identifier: m123
+            type: HelmChart
+            spec:
+              store:
+                type: Http
+                spec:
+                  connectorRef: Httphelm
+              chartName: chartmuseum
+              chartVersion: 2.14.1
+              subChartPath: ""
+              helmVersion: V3
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+              fetchHelmChartMetadata: false
       artifacts:
         primary:
           primaryArtifactRef: <+input>
@@ -34,4 +49,6 @@ service:
                 digest: ""
                 org: ""
               type: GithubPackageRegistry
+      manifestConfigurations:
+        primaryManifestRef: <+input>
     type: Kubernetes
