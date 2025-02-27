@@ -20,3 +20,31 @@ pipeline:
                   spec:
                     duration: 10m
         tags: {}
+    - stage:
+        name: dsf
+        identifier: dsf
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: dsf
+              namespace: asd
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: Wait
+                  name: Wait_1
+                  identifier: Wait_1
+                  spec:
+                    duration: 10m
+  properties:
+    ci:
+      codebase:
+        repoName: <+input>
+        build: <+input>
