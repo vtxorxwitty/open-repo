@@ -1,0 +1,5 @@
+service:
+  name: remoteserv
+  identifier: remoteserv
+  orgIdentifier: default
+  projectIdentifier: ved
