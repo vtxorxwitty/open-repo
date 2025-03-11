@@ -1,0 +1,6 @@
+overrides:
+  variables:
+    - name: hi
+      type: String
+      value: a
+      required: false
