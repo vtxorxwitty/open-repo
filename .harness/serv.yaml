@@ -1,0 +1,5 @@
+service:
+  name: serv
+  identifier: serv
+  orgIdentifier: default
+  projectIdentifier: V
