@@ -1,0 +1,5 @@
+service:
+  name: remote serv1
+  identifier: remote_serv1
+  orgIdentifier: default
+  projectIdentifier: VT_Tests
